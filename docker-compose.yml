@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  db:
+    image: nouchka/sqlite3:latest
+    stdin_open: true
+    tty: true
+    container_name: sqlite3
+    volumes:
+      - sqlitedb:/var/lib/sqlite
+
+  web:
+    build:
+      context: ./flask
+      dockerfile: Dockerfile
+    volumes:
+      - sqlitedb:/var/lib/volume
+    ports:
+      - "5000:5000"
+    image: web:flask
+    container_name: flask
+    command: flask run --host=0.0.0.0
+    depends_on:
+      - db
+volumes:
+  sqlitedb:

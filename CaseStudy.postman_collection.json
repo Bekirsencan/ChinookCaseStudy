@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "a99ac6a4-b8ff-4c2a-8910-1ddcb64c0857",
+		"name": "CaseStudy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Invoices",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/invoices",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"invoices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Invoice By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/invoices/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"invoices",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Invoice",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"BillingAddress\": \"Theodor-Heuss-Straße 34\",\r\n        \"BillingCity\": \"Stuttgart\",\r\n        \"BillingCountry\": \"Germany\",\r\n        \"BillingPostalCode\": \"70174\",\r\n        \"BillingState\": null,\r\n        \"CustomerId\": 2,\r\n        \"InvoiceDate\": \"2009-01-01T00:00:00\",\r\n        \"Total\": \"1.98\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/invoices/add",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"invoices",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Invoice By Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"BillingAddress\": \"Theodor-Heuss-Straße 34\",\r\n        \"BillingCity\": \"Stuttgart\",\r\n        \"BillingCountry\": \"Germany\",\r\n        \"BillingPostalCode\": \"70174\",\r\n        \"BillingState\": null,\r\n        \"CustomerId\": 2,\r\n        \"InvoiceDate\": \"2009-01-01T00:00:00\",\r\n        \"InvoiceId\": 413,\r\n        \"Total\": \"1.98\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/invoices/update/413",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"invoices",
+						"update",
+						"413"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Invoice By Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/invoices/delete/413",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"invoices",
+						"delete",
+						"413"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
